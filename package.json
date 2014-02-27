@@ -1,15 +1,16 @@
 {
   "name": "ruby-syntax-replacer",
   "main": "./lib/ruby-syntax-replacer",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "Will replace all old Ruby hash syntax with new",
-  "activationEvents": ["ruby-syntax-replacer:replace"],
+  "activationEvents": [
+    "ruby-syntax-replacer:replace"
+  ],
   "repository": "https://github.com/omegahm/ruby-syntax-replacer",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
