@@ -35,3 +35,17 @@ describe "ruby-syntax-replacer", ->
             position: 'Lead developer'
           }
         """
+
+    it "will not replace modules with rockets", ->
+      editor.setText """
+        begin
+        rescue Timeout::Error => e
+        end
+      """
+
+      replaceSyntax ->
+        expect(editor.getText()).toBe """
+          begin
+          rescue Timeout::Error => e
+          end
+        """
