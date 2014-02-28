@@ -6,7 +6,7 @@ module.exports =
 
 replaceSyntax = (editor) ->
   text = editor.getText()
-  replaced_text = text.replace /:(\w+)\s?(\s*)=>\s?(\s*)/g, ($0, $1, $2, $3) ->
-    $1 + ": " + $2 + "" + $3
+  replaced_text = text.replace /([^:]):(\w+)\s?(\s*)=>\s?(\s*)/g, ($0, $1, $2, $3, $4) ->
+    $1 + '' + $2 + ': ' + $3 + "" + $4
 
   editor.setText(replaced_text)
