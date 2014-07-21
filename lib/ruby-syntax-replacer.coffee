@@ -1,7 +1,7 @@
 module.exports =
   activate: ->
     atom.workspaceView.command 'ruby-syntax-replacer:replace', '.editor', ->
-      editor = atom.workspaceView.getActivePaneItem()
+      editor = atom.workspace.getActivePaneItem()
       replaceSyntax(editor)
 
 replaceSyntax = (editor) ->
