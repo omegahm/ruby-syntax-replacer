@@ -36,6 +36,34 @@ describe "ruby-syntax-replacer", ->
           }
         """
 
+    it "replaces only selected instances of old ruby syntax with new", ->
+      editor.setText """
+        {
+          :name     => 'Mads Ohm Larsen',
+          :age      => '25',
+          :position => 'Lead developer'
+        }
+
+        {
+          :repo => 'https://github.com/omegahm/ruby-syntax-replacer'
+        }
+      """
+
+      editor.setSelectedScreenRange [[7, 0], [9, 0]]
+
+      replaceSyntax ->
+        expect(editor.getText()).toBe """
+          {
+            :name     => 'Mads Ohm Larsen',
+            :age      => '25',
+            :position => 'Lead developer'
+          }
+
+          {
+            repo: 'https://github.com/omegahm/ruby-syntax-replacer'
+          }
+        """
+
     it "will not replace modules with rockets", ->
       editor.setText """
         begin
