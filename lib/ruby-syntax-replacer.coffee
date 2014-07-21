@@ -13,5 +13,5 @@ replaceSyntax = (editor) ->
     editor.setText(replaceHashRockets(text))
 
 replaceHashRockets = (text) ->
-  text.replace /([^:]):(\w+)\s?(\s*)=>\s?(\s*)/g, ($0, $1, $2, $3, $4) ->
-    $1 + '' + $2 + ': ' + $3 + "" + $4
+  text.replace /([^:]|^):(\w+)\s?(\s*)=>\s?(\s*)/g, ($0, $1, $2, $3, $4) ->
+    $1 + '' + $2 + ': ' + $3 + '' + $4
