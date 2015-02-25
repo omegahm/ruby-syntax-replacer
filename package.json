@@ -1,7 +1,7 @@
 {
   "name": "ruby-syntax-replacer",
   "main": "./lib/ruby-syntax-replacer",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "private": true,
   "description": "Will replace all old Ruby hash syntax with new",
   "activationEvents": [
