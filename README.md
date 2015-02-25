@@ -6,7 +6,7 @@ When run (by pressing <kbd>cmd</kbd>+<kbd>alt</kbd>+<kbd>x</kbd>), will replace 
 {
   :name     => 'Mads Ohm Larsen',
   :age      => '25',
-  :position => 'Lead developer'  
+  :position => 'Lead developer'
 }
 ```
 
