@@ -4,9 +4,9 @@
   "version": "0.3.2",
   "private": true,
   "description": "Will replace all old Ruby hash syntax with new",
-  "activationEvents": [
-    "ruby-syntax-replacer:replace"
-  ],
+  "activationCommands": {
+    "atom-text-editor": ["ruby-syntax-replacer:replace"]
+  },
   "repository": "https://github.com/omegahm/ruby-syntax-replacer",
   "license": "MIT",
   "engines": {
