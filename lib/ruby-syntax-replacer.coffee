@@ -1,7 +1,7 @@
 module.exports =
   activate: ->
     @commands = atom.commands.add 'atom-text-editor',
-      'ruby-syntax-replacer:replace': ->
+      'ruby-syntax-replacer:replace': =>
         editor = atom.workspace.getActivePaneItem()
         @_replaceSyntax(editor)
 
