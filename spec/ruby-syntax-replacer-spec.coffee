@@ -1,21 +1,20 @@
-{WorkspaceView} = require 'atom'
-
 describe "ruby-syntax-replacer", ->
   [activationPromise, editor, editorView] = []
 
   replaceSyntax = (callback) ->
-    editorView.trigger 'ruby-syntax-replacer:replace'
+    atom.commands.dispatch editorView, 'ruby-syntax-replacer:replace'
     waitsForPromise -> activationPromise
     runs(callback)
 
   beforeEach ->
-    atom.workspaceView = new WorkspaceView
-    atom.workspaceView.openSync()
+    waitsForPromise ->
+      atom.workspace.open()
 
-    editorView = atom.workspaceView.getActiveView()
-    editor = editorView.getEditor()
+    runs ->
+      editor = atom.workspace.getActiveTextEditor()
+      editorView = atom.views.getView(editor)
 
-    activationPromise = atom.packages.activatePackage('ruby-syntax-replacer')
+      activationPromise = atom.packages.activatePackage('ruby-syntax-replacer')
 
   describe "when the ruby-syntax-replacer:replace event is triggered", ->
     it "replaces all instances of old ruby syntax with new", ->
