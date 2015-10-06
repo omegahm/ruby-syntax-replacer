@@ -18,4 +18,4 @@ module.exports =
 
   _replaceHashRockets: (text) ->
     text.replace /([^:]|^):(\w+)\s?(\s*)=>\s?(\s*)/g, ($0, $1, $2, $3, $4) ->
-      "#{$1}#{$2}:#{$3}#{$4}"
+      "#{$1}#{$2}: #{$3}#{$4}"
