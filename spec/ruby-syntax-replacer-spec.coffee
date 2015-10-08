@@ -45,6 +45,24 @@ describe "ruby-syntax-replacer", ->
           {name: 'Mads'}
         """
 
+    it "keeps the whitespace", ->
+      editor.setText """
+        {
+          :name => 'Mads Ohm Larsen',
+          :age     => '25',
+          :position     => 'Lead developer'
+        }
+      """
+
+      replaceSyntax ->
+        expect(editor.getText()).toBe """
+          {
+            name: 'Mads Ohm Larsen',
+            age:     '25',
+            position:     'Lead developer'
+          }
+        """
+
     it "replaces selected text in the middle of a hash", ->
       editor.setText """
         {
