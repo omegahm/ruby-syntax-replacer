@@ -2,7 +2,7 @@
   "name": "ruby-syntax-replacer",
   "author": "Mads Ohm Larsen <mads.ohm@gmail.com>",
   "main": "./lib/ruby-syntax-replacer",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Will replace all old Ruby hash syntax with new",
   "keywords": [
     "ruby",
